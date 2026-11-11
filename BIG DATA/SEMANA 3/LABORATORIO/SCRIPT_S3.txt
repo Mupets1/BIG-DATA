@@ -1,0 +1,24 @@
+Create database BD_Semana3
+
+use BD_Semana3
+--Creacion tablas
+Create Table TblCategoria
+(
+codcat char(5) primary key,
+nomcat varchar(35)
+)
+
+Create Table TblProducto
+(
+codpro char(5) primary key,
+codcat char(5),
+nompro varchar(35),
+prepro decimal(10,2),
+canpro int
+)
+--comprobando con  un select
+select * from TblCategoria
+select * from TblProducto
+--relacionando las 2 tablas
+ALTER TABLE TblProducto add foreign key(codcat) references
+TblCategoria
